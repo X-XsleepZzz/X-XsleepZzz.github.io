@@ -2,6 +2,7 @@ import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import { articleTimestamp, isValidArticleDate } from './lib/dates';
+import { datedWritingLoader } from './lib/dated-loader';
 
 const articleDate = z.string().refine(isValidArticleDate, {
   message: '日付は "YYYY-MM-DD"、日時は "YYYY-MM-DDTHH:mm:ss+09:00" のように引用符とタイムゾーンを指定してください。',
@@ -9,7 +10,9 @@ const articleDate = z.string().refine(isValidArticleDate, {
 const qa = process.env.NOTES_QA === '1' && import.meta.env.MODE === 'qa';
 
 const writing = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: qa ? './tests/fixtures' : './src/content/writing' }),
+  loader: qa
+    ? glob({ pattern: '**/*.md', base: './tests/fixtures' })
+    : datedWritingLoader(import.meta.env.DEV),
   schema: z.object({
     title: z.string().trim().min(1),
     description: z.string().trim().optional(),

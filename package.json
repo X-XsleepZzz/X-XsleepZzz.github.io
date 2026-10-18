@@ -9,9 +9,10 @@
     "build": "astro build && node scripts/verify-production.mjs",
     "preview": "astro preview --host 127.0.0.1",
     "check": "astro check",
-    "test": "node --experimental-strip-types --test tests/dates.test.ts tests/font-subsets.test.mjs",
+    "test": "node --experimental-strip-types --test tests/dates.test.ts tests/article-history.test.ts tests/font-subsets.test.mjs",
     "build:qa": "NOTES_QA=1 astro build --mode qa && node scripts/copy-qa-assets.mjs",
     "test:browser": "playwright test",
+    "test:dates:integration": "node scripts/verify-auto-dates.mjs",
     "audit": "node scripts/audit.mjs"
   },
   "dependencies": {
