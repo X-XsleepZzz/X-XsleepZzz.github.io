@@ -8,6 +8,8 @@ test-results/
 playwright-report/
 qa/screenshots/
 qa/lighthouse/
+qa/lighthouse-published/
+qa/lighthouse-published-summary.json
 qa/browser-results.json
 qa/lighthouse-summary.json
 qa/lighthouse-before.json

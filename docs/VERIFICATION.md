@@ -81,4 +81,28 @@ Lighthouse **13.5.0**、Playwright管理のChromium、モバイルの標準シ�
 
 ## 公開後の確認
 
-GitHub Pagesのデプロイ後に、Actionsとは別に実際の公開URLを確認する。公開後の結果をここに追記する。
+2026-10-18 21:27–21:28 JSTに [公開URL](https://x-xsleepzzz.github.io/) をChromeおよびPlaywrightで実際に開いて確認した。
+
+- 公開リポジトリ: https://github.com/X-XsleepZzz/X-XsleepZzz.github.io
+- 初回Astroデプロイ: [Actions run 39127234179](https://github.com/X-XsleepZzz/X-XsleepZzz.github.io/actions/runs/39127234179)、build・deployとも成功。
+- Pages設定は `build_type: workflow`、HTTPS有効、HTTP/2 200。HTMLがgzip配信されていることも確認した。
+- 1440px・768px・375px、Light・DarkでHome・Writingの12画面を検証。空状態、内部リンク、テーマ切替と再読込後の保存、axeの違反0件を確認。
+- 未知のURLは404で、独自の日本語404ページが表示される。検証原稿3ページと検証画像も404で、公開されていない。
+- 実際のブラウザでもOS初期追従と手動のLight切替を確認。公開画面を `qa/screenshots/published/` に保存。
+
+公開URLでのLighthouseは、別の新規プロファイルで21:27–21:28 JSTに測定した。
+
+| 公開ページ | Performance | Accessibility | Best Practices | SEO | LCP | CLS |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Home | 98 | 100 | 100 | 100 | 1.53秒 | 0 |
+| Writing | 100 | 100 | 100 | 100 | 1.35秒 | 0 |
+
+これは記事0件の公開画面の値である。長文記事の検証結果は上のQA表を参照する。実際の将来の記事・画像・回線による値は変わる。
+
+初期設定時、GitHubがユーザーサイトに自動作成した旧Jekyll実行はAstro構成に対応せず失敗したが、デプロイはスキップされ公開成果物は作成されなかった。PagesのソースをGitHub Actionsへ変更し、Astroの公開が成功した。旧方式は現在使わない。
+
+## 残っている事項
+
+実装・公開・要求された検証に未完了の項目はない。著者自身の記事は未提供なので、本番は意図的に空状態としている。記事の執筆と `draft: false` の指定後にpushすれば、以降は自動公開される。
+
+自動検査で評価できない支援技術との相性、今後追加する画像の権利・サイズ、将来のブラウザや依存パッケージの変更については継続的な保証の範囲外である。

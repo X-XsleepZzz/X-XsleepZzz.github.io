@@ -42,8 +42,12 @@ try {
     await context.close();
   }
   const page = await browser.newPage();
-  await page.goto(new URL('/404.html', base).href);
+  const missing = await page.goto(new URL(process.env.NOTES_LIVE_URL ? '/not-a-real-page/' : '/404.html', base).href);
+  if (process.env.NOTES_LIVE_URL) assert.equal(missing.status(), 404);
   assert.match(await page.locator('h1').innerText(), /ページが見つかりません/);
+  for (const specimen of ['/writing/ja-typography/', '/writing/en-typography/', '/writing/technical/', '/qa-specimen.svg']) {
+    assert.equal((await page.request.get(new URL(specimen, base).href)).status(), 404);
+  }
   await page.close();
 } finally { await browser.close(); }
 await writeFile(`qa/${label}-results.json`, JSON.stringify({ date: new Date().toISOString(), base, results }, null, 2));

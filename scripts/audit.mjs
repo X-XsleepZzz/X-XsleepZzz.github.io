@@ -4,10 +4,11 @@ import { chromium } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 
 const base = process.env.NOTES_AUDIT_URL ?? 'http://127.0.0.1:4321';
+const reportDirectory = process.env.NOTES_AUDIT_PRODUCTION === '1' ? 'qa/lighthouse-published' : 'qa/lighthouse';
 const routes = process.env.NOTES_AUDIT_PRODUCTION === '1'
   ? [['home', '/'], ['writing', '/writing/']]
   : [['home', '/'], ['writing', '/writing/'], ['article-ja', '/writing/ja-typography/'], ['article-en', '/writing/en-typography/'], ['article-code', '/writing/technical/']];
-await mkdir('qa/lighthouse', { recursive: true });
+await mkdir(reportDirectory, { recursive: true });
 const summaries = [];
 for (const [name, route] of routes) {
   // Fresh profile per run; no reuse of the user's everyday browser.
@@ -17,8 +18,8 @@ for (const [name, route] of routes) {
       port: chrome.port, output: ['json', 'html'], logLevel: 'error',
       onlyCategories: ['performance', 'accessibility', 'best-practices', 'seo'],
     });
-    await writeFile(`qa/lighthouse/${name}.json`, result.report[0]);
-    await writeFile(`qa/lighthouse/${name}.html`, result.report[1]);
+    await writeFile(`${reportDirectory}/${name}.json`, result.report[0]);
+    await writeFile(`${reportDirectory}/${name}.html`, result.report[1]);
     const { lhr } = result;
     const summary = {
       page: name, url: lhr.finalDisplayedUrl, date: lhr.fetchTime,
@@ -32,4 +33,4 @@ for (const [name, route] of routes) {
     console.log(JSON.stringify(summary));
   } finally { await Promise.resolve(chrome.kill()); }
 }
-await writeFile('qa/lighthouse-summary.json', JSON.stringify(summaries, null, 2));
+await writeFile(`${reportDirectory}-summary.json`, JSON.stringify(summaries, null, 2));
