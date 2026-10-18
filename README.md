@@ -1,6 +1,6 @@
 # 個人サイト
 
-文章を中心にした、Astro・Markdown・CSSによる個人サイトです。GitHub Pagesで無料公開し、`main`へのpushで自動更新します。データベース、CMS、外部フォントAPI、アクセス解析は使いません。
+文章を中心にした、Astro・Markdown・CSSによる個人サイトです。GitHub Pagesで無料公開し、`main`へのpushで自動更新します。記事管理にはSveltia CMSを使い、データベース、外部フォントAPI、アクセス解析は使いません。CMSの外部スクリプトとフォントは管理画面だけで読み込みます。
 
 現在はPCで左サイドバー、スマートフォンでは上部ナビの構成です。以前の2つのデザインもタグとアーカイブに保存しています。
 
@@ -8,6 +8,8 @@
 - リポジトリ: https://github.com/X-XsleepZzz/X-XsleepZzz.github.io
 - 公開記事: `src/content/writing/`
 - 記事テンプレート: `templates/article.md`
+- CMSの操作と初期設定: [docs/CMS_OPERATION.md](docs/CMS_OPERATION.md)
+- CMSの設計・検証範囲: [docs/CMS_VERIFICATION.md](docs/CMS_VERIFICATION.md)
 - デザイン調査: `docs/DESIGN.md`
 - 検証記録: `docs/VERIFICATION.md`
 - デザインの保存版・戻し方: `docs/DESIGN_HISTORY.md`
