@@ -1,0 +1,174 @@
+[
+  {
+    "width": 1440,
+    "elements": [
+      {
+        "tag": "BODY",
+        "width": 1440,
+        "font": "\"Source Code Pro\", \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, \"ヒラギノ角ゴ ProN W3\", \"Hiragino Kaku Gothic ProN\", メイリオ, Meiryo, sans-serif",
+        "size": "16px",
+        "lineHeight": "24px",
+        "padding": "0px",
+        "color": "rgb(33, 37, 41)"
+      },
+      {
+        "tag": "DIV",
+        "width": 1140,
+        "font": "\"Source Code Pro\", \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, \"ヒラギノ角ゴ ProN W3\", \"Hiragino Kaku Gothic ProN\", メイリオ, Meiryo, sans-serif",
+        "size": "16px",
+        "lineHeight": "24px",
+        "padding": "0px 15px",
+        "color": "rgb(33, 37, 41)"
+      },
+      {
+        "tag": "NAV",
+        "width": 1110,
+        "font": "\"Source Code Pro\", \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, \"ヒラギノ角ゴ ProN W3\", \"Hiragino Kaku Gothic ProN\", メイリオ, Meiryo, sans-serif",
+        "size": "16px",
+        "lineHeight": "24px",
+        "padding": "8px 16px 8px 0px",
+        "color": "rgb(33, 37, 41)"
+      },
+      {
+        "tag": "A",
+        "width": 251.203125,
+        "font": "\"Source Code Pro\", monospace",
+        "size": "24px",
+        "lineHeight": "36px",
+        "padding": "5px 0px",
+        "color": "rgba(0, 0, 0, 0.9)"
+      },
+      {
+        "tag": "A",
+        "width": 54.40625,
+        "font": "\"Source Code Pro\", \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, \"ヒラギノ角ゴ ProN W3\", \"Hiragino Kaku Gothic ProN\", メイリオ, Meiryo, sans-serif",
+        "size": "16px",
+        "lineHeight": "24px",
+        "padding": "8px",
+        "color": "rgba(0, 0, 0, 0.5)"
+      },
+      {
+        "tag": "A",
+        "width": 54.40625,
+        "font": "\"Source Code Pro\", \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, \"ヒラギノ角ゴ ProN W3\", \"Hiragino Kaku Gothic ProN\", メイリオ, Meiryo, sans-serif",
+        "size": "16px",
+        "lineHeight": "24px",
+        "padding": "8px",
+        "color": "rgba(0, 0, 0, 0.5)"
+      },
+      {
+        "tag": "A",
+        "width": 92.8125,
+        "font": "\"Source Code Pro\", \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, \"ヒラギノ角ゴ ProN W3\", \"Hiragino Kaku Gothic ProN\", メイリオ, Meiryo, sans-serif",
+        "size": "16px",
+        "lineHeight": "24px",
+        "padding": "8px",
+        "color": "rgba(0, 0, 0, 0.5)"
+      },
+      {
+        "tag": "A",
+        "width": 64,
+        "font": "\"Source Code Pro\", \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, \"ヒラギノ角ゴ ProN W3\", \"Hiragino Kaku Gothic ProN\", メイリオ, Meiryo, sans-serif",
+        "size": "16px",
+        "lineHeight": "24px",
+        "padding": "8px",
+        "color": "rgba(0, 0, 0, 0.5)"
+      },
+      {
+        "tag": "A",
+        "width": 54.40625,
+        "font": "\"Source Code Pro\", \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, \"ヒラギノ角ゴ ProN W3\", \"Hiragino Kaku Gothic ProN\", メイリオ, Meiryo, sans-serif",
+        "size": "16px",
+        "lineHeight": "24px",
+        "padding": "8px",
+        "color": "rgba(0, 0, 0, 0.5)"
+      },
+      {
+        "tag": "A",
+        "width": 83.203125,
+        "font": "\"Source Code Pro\", \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, \"ヒラギノ角ゴ ProN W3\", \"Hiragino Kaku Gothic ProN\", メイリオ, Meiryo, sans-serif",
+        "size": "16px",
+        "lineHeight": "24px",
+        "padding": "8px",
+        "color": "rgba(0, 0, 0, 0.5)"
+      },
+      {
+        "tag": "DIV",
+        "width": 1140,
+        "font": "\"Source Code Pro\", \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, \"ヒラギノ角ゴ ProN W3\", \"Hiragino Kaku Gothic ProN\", メイリオ, Meiryo, sans-serif",
+        "size": "16px",
+        "lineHeight": "24px",
+        "padding": "0px 15px",
+        "color": "rgb(33, 37, 41)"
+      },
+      {
+        "tag": "H2",
+        "width": 1110,
+        "font": "\"Source Code Pro\", \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, \"ヒラギノ角ゴ ProN W3\", \"Hiragino Kaku Gothic ProN\", メイリオ, Meiryo, sans-serif",
+        "size": "32px",
+        "lineHeight": "38.4px",
+        "padding": "0px",
+        "color": "rgb(33, 37, 41)"
+      }
+    ]
+  },
+  {
+    "width": 375,
+    "elements": [
+      {
+        "tag": "BODY",
+        "width": 375,
+        "font": "\"Source Code Pro\", \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, \"ヒラギノ角ゴ ProN W3\", \"Hiragino Kaku Gothic ProN\", メイリオ, Meiryo, sans-serif",
+        "size": "16px",
+        "lineHeight": "24px",
+        "padding": "0px",
+        "color": "rgb(33, 37, 41)"
+      },
+      {
+        "tag": "DIV",
+        "width": 375,
+        "font": "\"Source Code Pro\", \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, \"ヒラギノ角ゴ ProN W3\", \"Hiragino Kaku Gothic ProN\", メイリオ, Meiryo, sans-serif",
+        "size": "16px",
+        "lineHeight": "24px",
+        "padding": "0px 15px",
+        "color": "rgb(33, 37, 41)"
+      },
+      {
+        "tag": "NAV",
+        "width": 345,
+        "font": "\"Source Code Pro\", \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, \"ヒラギノ角ゴ ProN W3\", \"Hiragino Kaku Gothic ProN\", メイリオ, Meiryo, sans-serif",
+        "size": "16px",
+        "lineHeight": "24px",
+        "padding": "8px 16px 8px 0px",
+        "color": "rgb(33, 37, 41)"
+      },
+      {
+        "tag": "A",
+        "width": 251.203125,
+        "font": "\"Source Code Pro\", monospace",
+        "size": "24px",
+        "lineHeight": "36px",
+        "padding": "5px 0px",
+        "color": "rgba(0, 0, 0, 0.9)"
+      },
+      {
+        "tag": "DIV",
+        "width": 375,
+        "font": "\"Source Code Pro\", \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, \"ヒラギノ角ゴ ProN W3\", \"Hiragino Kaku Gothic ProN\", メイリオ, Meiryo, sans-serif",
+        "size": "16px",
+        "lineHeight": "24px",
+        "padding": "0px 15px",
+        "color": "rgb(33, 37, 41)"
+      },
+      {
+        "tag": "H2",
+        "width": 345,
+        "font": "\"Source Code Pro\", \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, \"ヒラギノ角ゴ ProN W3\", \"Hiragino Kaku Gothic ProN\", メイリオ, Meiryo, sans-serif",
+        "size": "32px",
+        "lineHeight": "38.4px",
+        "padding": "0px",
+        "color": "rgb(33, 37, 41)"
+      }
+    ]
+  }
+]

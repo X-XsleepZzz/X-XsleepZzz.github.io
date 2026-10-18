@@ -138,3 +138,30 @@ test('localStorage unavailable does not break theme or content', async ({ page }
   await page.getByRole('button', { name: 'ダークモード', exact: true }).click();
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
 });
+
+for (const width of [1440, 768]) {
+  test(`${width}px: sidebar is left of the article and navigation stays accessible while scrolling`, async ({ page }) => {
+    await page.setViewportSize({ width, height: 1000 });
+    await page.goto('/writing/ja-typography/');
+    const sidebar = page.getByRole('complementary', { name: 'サイトナビゲーション' });
+    const sideBox = await sidebar.boundingBox();
+    const mainBox = await page.locator('main').boundingBox();
+    expect(sideBox!.x + sideBox!.width).toBeLessThan(mainBox!.x);
+    await page.locator('.prose > p').last().scrollIntoViewIfNeeded();
+    const home = sidebar.getByRole('link', { name: 'ホーム', exact: true });
+    await expect(home).toBeInViewport();
+    await sidebar.getByRole('link', { name: '記事一覧', exact: true }).click();
+    await expect(page).toHaveURL(/\/writing\/$/);
+  });
+}
+
+test('mobile: sidebar becomes top navigation and leaves the full content width', async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 900 });
+  await page.goto('/writing/ja-typography/');
+  const sideBox = await page.locator('.sidebar').boundingBox();
+  const mainBox = await page.locator('main').boundingBox();
+  expect(sideBox!.y + sideBox!.height).toBeLessThan(mainBox!.y);
+  expect(mainBox!.width).toBeGreaterThanOrEqual(300);
+  await expect(page.getByRole('link', { name: 'ホーム', exact: true })).toBeVisible();
+  await expect(page.getByRole('link', { name: '記事一覧', exact: true })).toBeVisible();
+});

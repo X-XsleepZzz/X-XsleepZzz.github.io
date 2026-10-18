@@ -2,6 +2,8 @@
 
 文章を中心にした、Astro・Markdown・CSSによる個人サイトです。GitHub Pagesで無料公開し、`main`へのpushで自動更新します。データベース、CMS、外部フォントAPI、アクセス解析は使いません。
 
+現在はPCで左サイドバー、スマートフォンでは上部ナビの構成です。以前の2つのデザインもタグとアーカイブに保存しています。
+
 - 公開先: https://x-xsleepzzz.github.io/
 - リポジトリ: https://github.com/X-XsleepZzz/X-XsleepZzz.github.io
 - 公開記事: `src/content/writing/`
@@ -166,7 +168,8 @@ QAビルドは、専用環境変数と `--mode qa` の両方を指定した場�
 
 - 英語本文: **Source Serif 4**、400・600・400 italic
 - 日本語本文: **Shippori Mincho（しっぽり明朝）**、400
-- 英語UI・見出し: **Inter**、400・500。日本語UI・見出しはOS標準のゴシック体
+- 記事見出し・補助UI: **Inter**、400・500。日本語はOS標準のゴシック体
+- サイドバー・ページ見出し: OS標準の等幅フォント（Menlo、Consolasなど）。日本語はゴシック体へフォールバック
 - コード: OS標準の等幅フォント
 
 3種類のWebフォントはSIL Open Font License 1.1です。Fontsourceの固定バージョンから自己ホストし、日本語には `unicode-range` によるサブセットを利用します。ライセンス全文を `public/licenses/` に同梱しています。外部のGoogle Fontsサーバーへブラウザから接続しません。
