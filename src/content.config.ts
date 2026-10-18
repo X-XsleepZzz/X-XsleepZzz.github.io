@@ -18,7 +18,7 @@ const writing = defineCollection({
     description: z.string().trim().optional(),
     publishedAt: articleDate,
     updatedAt: articleDate.optional(),
-    category: z.enum(['Learning', 'Essay', 'Essays', 'Notes']).optional(),
+    category: z.enum(['Learning', 'Essays', 'Notes']).optional(),
     draft: z.boolean().default(false),
     language: z.enum(['ja', 'en']).default('ja'),
   }).refine(article => !article.updatedAt || articleTimestamp(article.updatedAt) >= articleTimestamp(article.publishedAt), {

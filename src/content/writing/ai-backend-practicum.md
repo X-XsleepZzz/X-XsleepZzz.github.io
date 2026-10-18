@@ -1,6 +1,6 @@
 ---
 title: "AIにバックエンドエンジニア向けの教材を作らせて完走した話"
-category: Essay
+category: Essays
 draft: false
 language: ja
 ---
@@ -55,3 +55,7 @@ DBは最初からPostgreSQLにして。他のSQL使ったことないから。
 FastAPIのtutorialをやるにしても、どの部分を読んで、自分でどこを考えて書くべきかなど細かく具体的に指定して。
 
 </div>
+
+教材をもとに作成したアプリはこちら
+
+[https://github.com/X-XsleepZzz/web-practice-2026](https://github.com/X-XsleepZzz/web-practice-2026)
