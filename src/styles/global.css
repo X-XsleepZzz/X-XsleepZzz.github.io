@@ -101,6 +101,8 @@ html[lang='en'] .prose { font-size: 20px; line-height: 1.75; }
 .prose li::marker { color: var(--muted); }
 .prose blockquote { margin-inline: 0; padding-left: 23px; border-left: 2px solid var(--underline); color: var(--muted); }
 .prose blockquote p + p { margin-top: 1em; }
+.prose-note { padding: 24px; border: 1px solid var(--border); border-radius: 2px; background: var(--surface); }
+.prose-note > * + * { margin-top: 1em; }
 .prose code { font: 400 .78em/1.65 var(--mono); background: var(--surface); padding: .16em .32em; border-radius: 2px; }
 .prose pre { padding: 23px 25px; border: 1px solid var(--border); border-radius: 2px; max-width: 100%; overflow-x: auto; overscroll-behavior-x: contain; font-size: 14px; line-height: 1.8; }
 .prose pre code { font: inherit; font-family: var(--mono); padding: 0; background: none; border: 0; border-radius: 0; }
