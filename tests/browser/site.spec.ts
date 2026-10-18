@@ -44,8 +44,8 @@ for (const width of [1440, 768, 375]) {
 
 test('newest first, localized dates, draft exclusion and navigation', async ({ page }) => {
   await page.goto('/writing/');
-  await expect(page.locator('.entry-content h3')).toHaveText([
-    '文章を読むための余白↗', 'Markdown とコードの表示を確かめる↗', 'A little room to think↗',
+  await expect(page.locator('.entry-content h2')).toHaveText([
+    '文章を読むための余白', 'Markdown とコードの表示を確かめる', 'A little room to think',
   ]);
   await expect(page.locator('.entry-date time')).toHaveText(['2026年10月18日', '2026年10月17日 09:30 (UTC+09:00)', 'Oct 16, 2026']);
   await page.getByRole('link', { name: '文章を読むための余白' }).click();
@@ -67,7 +67,7 @@ test('theme toggles with keyboard, persists, and keeps manual preference', async
   expect(await page.evaluate(() => localStorage.getItem('notes-theme'))).toBe('dark');
   await page.reload();
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
-  await page.getByRole('link', { name: 'Writing', exact: true }).click();
+  await page.getByRole('link', { name: '記事一覧', exact: true }).click();
   await expect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
   await page.emulateMedia({ colorScheme: 'dark' });
   await toggle.focus();

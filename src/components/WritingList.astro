@@ -10,16 +10,14 @@ const { articles } = Astro.props;
       <li>
         <div class="entry-date"><ArticleDate value={article.data.publishedAt} language={article.data.language} /></div>
         <div class="entry-content" lang={article.data.language}>
-          <h3><a href={`/writing/${article.id}/`}>{article.data.title}<span aria-hidden="true" class="entry-arrow">↗</span></a></h3>
+          <h2><a href={`/writing/${article.id}/`}>{article.data.title}</a></h2>
           {article.data.description && <p>{article.data.description}</p>}
-          {article.data.category && <span class="entry-category" lang="en">{article.data.category}</span>}
         </div>
       </li>
     ))}
   </ol>
 ) : (
   <div class="empty-state">
-    <p class="empty-title">記事は準備中です。</p>
-    <p class="empty-description">公開された記事が、ここに並びます。</p>
+    <p>記事はまだありません。</p>
   </div>
 )}

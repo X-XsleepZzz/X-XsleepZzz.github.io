@@ -8,15 +8,14 @@ export async function getStaticPaths() {
 }
 interface Props { article: CollectionEntry<'writing'> }
 const { article } = Astro.props;
-const { title, description, publishedAt, updatedAt, language, category } = article.data;
+const { title, description, publishedAt, updatedAt, language } = article.data;
 const { Content } = await render(article);
 const english = language === 'en';
 ---
 <Base title={title} description={description} language={language} article>
   <article>
     <header class="article-header">
-      <a href="/writing/" class="article-back text-link"><span aria-hidden="true">←</span> {english ? 'All writing' : '記事一覧'}</a>
-      {category && <p class="eyebrow article-category" lang="en">{category}</p>}
+      <a href="/writing/" class="article-back text-link">{english ? 'All articles' : '記事一覧に戻る'}</a>
       <h1 class="article-title">{title}</h1>
       <div class="article-meta">
         <span>{english ? 'Published' : '公開'} <ArticleDate value={publishedAt} language={language} /></span>
@@ -25,6 +24,6 @@ const english = language === 'en';
       {description && <p class="article-description">{description}</p>}
     </header>
     <div class="prose"><Content /></div>
-    <div class="article-end"><span aria-hidden="true">∎</span><a class="text-link" href="/writing/">{english ? 'Back to writing' : '記事一覧に戻る'} <span aria-hidden="true">↗</span></a></div>
+    <div class="article-end"><a class="text-link" href="/writing/">{english ? 'All articles' : '記事一覧に戻る'}</a></div>
   </article>
 </Base>

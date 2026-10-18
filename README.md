@@ -1,4 +1,4 @@
-# Notes
+# 個人サイト
 
 文章を中心にした、Astro・Markdown・CSSによる個人サイトです。GitHub Pagesで無料公開し、`main`へのpushで自動更新します。データベース、CMS、外部フォントAPI、アクセス解析は使いません。
 
@@ -8,6 +8,7 @@
 - 記事テンプレート: `templates/article.md`
 - デザイン調査: `docs/DESIGN.md`
 - 検証記録: `docs/VERIFICATION.md`
+- デザインの保存版・戻し方: `docs/DESIGN_HISTORY.md`
 
 ## 開発環境
 
@@ -84,7 +85,7 @@ ISO 8601形式の**引用符付き文字列**で設定します。
 
 ## カテゴリと言語
 
-`category` は `Learning`、`Essays`、`Notes` から選びます。不要なら行ごと省略できます。カテゴリは小さなラベルとして表示し、フィルターやカテゴリページは生成しません。
+`category` は `Learning`、`Essays`、`Notes` から選びます。不要なら行ごと省略できます。カテゴリはメタデータとして保持し、画面のラベル・フィルター・カテゴリページは生成しません。
 
 `language` は `ja` または `en` です。記事ページの言語、日付、案内リンク、本文の行間を切り替えます。Home・Writingは日本語を基調とし、各記事のタイトルと日付は記事自身の言語に従います。
 
@@ -163,9 +164,9 @@ QAビルドは、専用環境変数と `--mode qa` の両方を指定した場�
 
 ## フォントとライセンス
 
-- 英語本文・サイト名: **Source Serif 4**、400・600・400 italic
+- 英語本文: **Source Serif 4**、400・600・400 italic
 - 日本語本文: **Shippori Mincho（しっぽり明朝）**、400
-- 英語UI: **Inter**、400・500。日本語UIはOS標準のゴシック体
+- 英語UI・見出し: **Inter**、400・500。日本語UI・見出しはOS標準のゴシック体
 - コード: OS標準の等幅フォント
 
 3種類のWebフォントはSIL Open Font License 1.1です。Fontsourceの固定バージョンから自己ホストし、日本語には `unicode-range` によるサブセットを利用します。ライセンス全文を `public/licenses/` に同梱しています。外部のGoogle Fontsサーバーへブラウザから接続しません。

@@ -19,7 +19,8 @@ try {
       assert.equal(response.status(), 200);
       await page.evaluate(() => document.fonts.ready);
       const body = await page.locator('body').innerText();
-      assert.match(body, /記事は準備中です/);
+      assert.match(body, /記事はまだありません/);
+      assert.doesNotMatch(body, /Notes|A personal notebook|The archive|Recent writing|Learning, essays/i);
       assert.doesNotMatch(body, /NOTES_QA_FIXTURE|AUTHORING_|DRAFT_|文章を読むための余白|A little room to think/);
       assert.equal(await page.locator('.qa-notice').count(), 0);
       assert.equal(await page.locator('html').getAttribute('data-theme'), theme);

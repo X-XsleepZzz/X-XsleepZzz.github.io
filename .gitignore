@@ -1,4 +1,5 @@
 /node_modules
+backups/
 .notes-node_modules-icloud/
 dist/
 .astro/
