@@ -1,0 +1,6 @@
+---
+import { formatArticleDate, type ArticleLanguage } from '../lib/dates';
+interface Props { value: string; language?: ArticleLanguage }
+const { value, language = 'ja' } = Astro.props;
+---
+<time datetime={value}>{formatArticleDate(value, language)}</time>

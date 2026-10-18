@@ -1,0 +1,20 @@
+---
+import Base from '../../layouts/Base.astro';
+import WritingList from '../../components/WritingList.astro';
+import { getPublishedWriting } from '../../lib/writing';
+const articles = await getPublishedWriting();
+---
+<Base title="Writing" description="学習記録、技術記事、エッセイの一覧。">
+  <header class="page-intro">
+    <p class="eyebrow" lang="en">The archive</p>
+    <h1 class="page-title" lang="en">Writing<span class="title-period" aria-hidden="true">.</span></h1>
+    <p class="intro-copy">学習記録、技術記事、エッセイ。</p>
+  </header>
+  <section aria-labelledby="archive-title" class="archive-section">
+    <div class="section-heading">
+      <h2 id="archive-title">すべての記事</h2>
+      <span class="article-count" aria-label={`${articles.length}件の記事`}>{String(articles.length).padStart(2, '0')}</span>
+    </div>
+    <WritingList articles={articles} />
+  </section>
+</Base>

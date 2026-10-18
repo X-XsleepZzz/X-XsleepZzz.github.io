@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import WritingList from '../components/WritingList.astro';
+import { getPublishedWriting } from '../lib/writing';
+const articles = await getPublishedWriting();
+---
+<Base>
+  <section class="home-intro" aria-labelledby="home-title">
+    <p class="eyebrow" lang="en">A personal notebook</p>
+    <h1 id="home-title" class="display-title">Notes<span class="title-period" aria-hidden="true">.</span></h1>
+    <p class="intro-copy">学び、技術、日々の記録。</p>
+    <p class="intro-secondary">考えたことを、ひとつずつ。</p>
+  </section>
+  <section class="recent-section" aria-labelledby="recent-title">
+    <div class="section-heading">
+      <h2 id="recent-title" lang="en">Recent writing</h2>
+      <a href="/writing/" class="text-link">すべての記事 <span aria-hidden="true">↗</span></a>
+    </div>
+    <WritingList articles={articles.slice(0, 5)} />
+  </section>
+</Base>

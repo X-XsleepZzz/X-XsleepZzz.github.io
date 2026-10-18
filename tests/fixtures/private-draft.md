@@ -1,0 +1,7 @@
+---
+title: "DRAFT_MUST_NEVER_APPEAR"
+publishedAt: "2026-10-20"
+draft: true
+---
+
+NOTES_QA_FIXTURE DRAFT_SECRET_BODY_MUST_NEVER_APPEAR
