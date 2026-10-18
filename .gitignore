@@ -6,6 +6,7 @@ dist/
 .qa-dist/
 .qa-astro/
 test-results/
+qa/cms-test-results/
 playwright-report/
 qa/screenshots/
 qa/lighthouse/

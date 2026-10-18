@@ -1,0 +1,75 @@
+backend:
+  name: github
+  repo: X-XsleepZzz/X-XsleepZzz.github.io
+  branch: main
+  squash_merges: true
+
+# 保存はPRに留める。「公開」だけがmainへマージする。
+publish_mode:
+  type: preview
+  direct_publish: false
+  allow_incomplete_drafts: false
+
+site_url: https://x-xsleepzzz.github.io
+display_url: https://x-xsleepzzz.github.io
+media_folder: public/images
+public_folder: /images
+media_libraries:
+  default:
+    config:
+      max_file_size: 2097152
+      filename_template: '{{filename}}-{{uuid_short}}'
+
+# Zodのoptionalは空文字/nullを許可しないフィールドがある。
+output:
+  omit_empty_optional_fields: true
+  # AstroのYAMLパーサーに日付文字列をDateへ変換させない。
+  yaml:
+    quote: double
+
+collections:
+  - name: writing
+    label: 記事
+    label_singular: 記事
+    folder: src/content/writing
+    create: true
+    delete: true
+    extension: md
+    format: yaml-frontmatter
+    preview_path: writing/{{slug}}/
+    # slug専用のFrontmatterは増やさない。初回のみ必須の手入力。
+    slug:
+      editable: [create]
+      pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', '半角小文字・数字・ハイフンで入力してください。']
+      hint: 'URLの末尾です（例: backend-learning）。保存後は変更できません。'
+    fields:
+      - name: title
+        label: タイトル
+        widget: string
+        pattern: ['.*\S.*', 'タイトルを入力してください。']
+      - name: description
+        label: 概要
+        widget: text
+        required: false
+      - name: category
+        label: カテゴリ
+        widget: select
+        options: [Learning, Essays, Notes]
+        required: false
+      - name: language
+        label: 言語
+        widget: select
+        options: [ja, en]
+        default: ja
+      - name: draft
+        label: サイトに表示しない
+        widget: boolean
+        default: false
+        hint: '通常はOFF。保存は別途PRに留まります。ONで公開操作してもサイトには表示されません。GitHub上の原稿は公開情報です。'
+      # 日付フィールドは追加しない。既存の手動指定値は未知のFrontmatterとして保持する。
+      - name: body
+        label: 本文
+        widget: markdown
+        modes: [raw]
+        sanitize_preview: true
+        hint: 'Markdownで入力します。秘密の原稿は保存しないでください。コードフェンス内も原文のまま保存します。'
